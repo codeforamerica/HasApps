@@ -82,10 +82,11 @@
   
 <!-- Sample stuff -->
 
-         <h3>Index of Projects aka checking that it works wooo!</h3>
+         <h3>Index of Projects aka checking that it works wooo! ommg twooo worksheets!</h3>
             <div id="stats"></div>
+            <div id="other"></div>
          
-
+<!-- use lowercase calls to spreadsheet! -->
           <script id="stats" type="text/html">
           <table>
             <thead>
@@ -110,7 +111,29 @@
               <td>{{device}}</td>
               <td>{{url}}</td>
               <td>{{description}}</td>
+
               </tr>
+            {{/rows}}
+          </table>
+
+          
+           </script>
+
+           <script id="other" type="text/html">
+          <table>
+            <thead>
+            <tr>
+            <th>City</th>
+            <th>Organization</th>
+            <th>URL</th>
+            </tr>
+            </thead>
+            {{#rows}}
+           <tr>
+            <td>{{city}}</td>
+            <td>{{org}}</td>
+            <td>{{url}}</td>
+           </tr>
             {{/rows}}
           </table>
 
@@ -130,12 +153,14 @@
       
 
                var stats = ich.stats({
-                 "rows": data
+                 "rows": tabletop.sheets("App List").all()
+               })
+               var other = ich.other({
+                 "rows": tabletop.sheets("City Contacts").all()
                })
 
-              console.log(data)
-
                document.getElementById('stats').innerHTML = stats;
+               document.getElementById('other').innerHTML = other;
 
              }
           </script>

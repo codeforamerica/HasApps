@@ -1,11 +1,10 @@
-var YEARS = ["year2012", "year2013", "year2014", "year2015", "year2016", "year2017", "year2018", "year2019"]
-var URL = 'https://docs.google.com/spreadsheet/pub?key=0AubZLwmQS1-YdDVyTlhDTkdRZ2dPQ1VzSi1nRnNQQXc&single=true&gid=1&output=html';
+var URL = 'https://docs.google.com/spreadsheet/pub?key=0AubZLwmQS1-YdDVyTlhDTkdRZ2dPQ1VzSi1nRnNQQXc&output=html';
 
 
 
 function loadSpreadsheet() {
   
-  Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
+  Tabletop.init( { key: URL, callback: showInfo } )
 }
 
 function displayAddress(map, project) {
