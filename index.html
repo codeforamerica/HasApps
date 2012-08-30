@@ -132,7 +132,7 @@
            <tr>
             <td>{{city}}</td>
             <td>{{org}}</td>
-            <td>{{url}}</td>
+            <td>{{orgurl}}</td>
            </tr>
             {{/rows}}
           </table>
@@ -149,19 +149,18 @@
 
              function showInfo(data, tabletop) {
                
-               
-      
-
                var stats = ich.stats({
                  "rows": tabletop.sheets("App List").all()
                })
+
                var other = ich.other({
                  "rows": tabletop.sheets("City Contacts").all()
                })
 
+               console.log(tabletop.sheets("App List").all())
+
                document.getElementById('stats').innerHTML = stats;
                document.getElementById('other').innerHTML = other;
-
              }
           </script>
       
