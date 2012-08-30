@@ -1,0 +1,1 @@
+HasApps is a showcase for 100% free civic apps, city-by-city!
